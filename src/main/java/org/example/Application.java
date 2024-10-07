@@ -16,9 +16,9 @@ public class Application {
         customer.setLastName("Fredericci");
         entityManager.persist(customer);*/
 
-        Animal ellyElephant = new Animal("Elly", 9, Animal.GenderType.FEMALE);
-        AnimalDAO aDAO = new JPAAnimalDAO();
-        aDAO.saveAnimal(ellyElephant);
+        AnimalUtils animalUtils = new AnimalUtils();
+        animalUtils.setaDAO(new JPAAnimalDAO());
+        animalUtils.runUtils();
 
     }
 
