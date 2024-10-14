@@ -1,5 +1,7 @@
 package org.example;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,6 +13,14 @@ public class Animal {
     private int age;
     @Enumerated(EnumType.STRING)
     private GenderType gender;
+    @ManyToOne
+    @JoinColumn(name = "ownerZoo")
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    private Zoo ownerZoo;
+
+    public void setOwnerZoo(Zoo ownerZoo) {
+        this.ownerZoo = ownerZoo;
+    }
 
     public enum GenderType{
         MALE,FEMALE,UNKNOWN;

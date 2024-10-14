@@ -1,12 +1,18 @@
 package org.example;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Zoo {
+    @Id
+    @GeneratedValue
     private int id;
     private String name;
-    private List<Animal> animals = new ArrayList<>();
+    /*@OneToMany
+    @JoinColumn(name = "zoo_id")
+    private List<Animal> animals = new ArrayList<>();*/
 
     public Zoo(String name) {
         this.name = name;
@@ -20,7 +26,4 @@ public class Zoo {
         this.name = name;
     }
 
-    public List<Animal> getAnimals() {
-        return animals;
-    }
 }

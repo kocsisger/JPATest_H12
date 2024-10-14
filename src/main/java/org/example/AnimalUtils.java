@@ -9,6 +9,8 @@ public class AnimalUtils {
 
     public void runUtils(){
         Animal ellyElephant = new Animal("Elly", 9, Animal.GenderType.FEMALE);
+        Zoo zoo = new Zoo("Debecen Zoo");
+        ellyElephant.setOwnerZoo(zoo);
         aDAO.saveAnimal(ellyElephant);
     }
 }
